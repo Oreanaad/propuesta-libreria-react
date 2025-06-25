@@ -1,0 +1,323 @@
+/* src/components/Header.css */
+
+/* --- Estilos globales y reset --- */
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /* Fondo principal de la página, según tu último CSS */
+    background-color: #fff;
+    font-family: Arial, sans-serif; /* Fuente global por defecto */
+}
+
+/* --- Estilos base del encabezado (para pantallas medianas/grandes) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; /* Aumentado el padding horizontal para pantallas grandes */
+    background-color: var(--primario); /* Color de fondo del encabezado */
+    border-bottom: 1px solid #eee;
+    width: 100%; /* Asegura que ocupe el 100% del ancho */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    position: sticky; /* Se queda pegado al hacer scroll */
+    top: 0; /* Lo posiciona en la parte superior */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.header-logo {
+    flex-shrink: 0; /* Evita que el logo se encoja */
+    margin-right: 20px;
+    margin-left: 180px; /* Margen para pantallas grandes */
+}
+
+.header-logo img {
+    height: 100px; /* Tamaño del logo para pantallas grandes */
+    display: block;
+}
+
+.header-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 8px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Ancho máximo para el buscador */
+    width: 100%;
+    margin:  auto; /* Centra el buscador y añade margen vertical */
+}
+
+.search-input-fancy {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 1em;
+    color: #333;
+    background-color: transparent;
+}
+
+.search-input-fancy::placeholder {
+    color: #888;
+}
+
+.search-button-fancy {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2em; /* Tamaño del ícono de lupa */
+    color: #555; /* Color gris oscuro para el ícono de lupa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    
+    color: #555 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.search-button-fancy:hover {
+    color: #333;
+}
+
+/* --- Estilos para botones de acción (Wishlist, Usuario, Carrito) --- */
+.header-actions {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+.action-button {
+    padding: 8px 12px;
+background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Espacio entre el icono y el texto */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.action-button-heart {
+    padding: 8px 12px;
+background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Espacio entre el icono y el texto */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: var(--secundario); /* Gris muy claro al pasar el ratón */
+    /* Texto más oscuro al pasar el ratón */
+}
+.heart-icon {
+    font-size: 1.6em; /* Tamaño del icono del corazón */
+    color: #fff; /* Color inicial oscuro */
+    position: relative;
+    display: inline-block;
+}
+
+
+
+/* Estilos para los iconos de persona y cesta */
+.user-icon, .cart-icon {
+    font-size: 1.2em;
+    color: #333; /* Iconos oscuros */
+}
+
+/* --- Estilos para la navegación inferior (si se usa) --- */
+
+
+/* --- Media Queries para Responsividad --- */
+
+/* Para pantallas medianas (tabletas y algunos laptops, hasta 1024px) */
+@media (max-width: 1024px) {
+    .main-header {
+        padding: 10px 20px; /* Reducir padding horizontal del header */
+    }
+
+    .header-logo {
+        margin-left: 50px; /* Ajustar margen izquierdo del logo */
+    }
+
+    .header-logo img {
+        height: 80px; /* Reducir tamaño del logo */
+    }
+
+    .search-container {
+        max-width: 500px; /* Reducir ancho máximo del buscador */
+    }
+
+    .header-actions {
+        margin-left: 10px; /* Reducir margen izquierdo de los botones de acción */
+    }
+
+    .action-button {
+        padding: 6px 10px; /* Reducir padding de los botones de acción */
+        font-size: 0.85em; /* Reducir tamaño de fuente de los botones */
+    }
+
+    .heart-icon {
+        font-size: 1.4em; /* Ajustar tamaño del icono del corazón */
+    }
+
+    .user-icon, .cart-icon {
+        font-size: 1.1em; /* Ajustar tamaño de iconos de persona y cesta */
+    }
+}
+
+/* Para pantallas pequeñas (teléfonos móviles, hasta 768px) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center; /* Centrar elementos apilados */
+        padding: 15px 10px; /* Más padding vertical, menos horizontal */
+    }
+
+    .header-logo {
+        margin-left: 0; /* Eliminar margen izquierdo fijo */
+        margin-bottom: 10px; /* Espacio debajo del logo */
+    }
+
+    .header-logo img {
+        height: 70px; /* Reducir aún más el tamaño del logo */
+    }
+
+    .header-search {
+        order: 3; /* Mover el buscador a la parte inferior en móviles */
+        width: 100%; /* Ocupar todo el ancho disponible */
+        margin: 10px 0; /* Ajustar márgenes */
+    }
+
+    .search-container {
+        margin: 0 auto; /* Centrar buscador */
+        max-width: 90%; /* Ancho más adaptado al móvil */
+    }
+
+    .header-actions {
+        order: 2; /* Mover los botones de acción al centro */
+        width: 100%; /* Ocupar todo el ancho disponible */
+        justify-content: center; /* Centrar los botones horizontalmente */
+        margin-left: 0; /* Eliminar margen fijo */
+        margin-top: 10px; /* Espacio arriba de los botones */
+        flex-wrap: wrap; /* Permitir que los botones se envuelvan si no caben */
+    }
+
+    .action-button {
+        flex-grow: 1; /* Permite que los botones crezcan para llenar el espacio */
+        max-width: 120px; /* Limitar ancho para que no sean demasiado grandes */
+        font-size: 0.8em; /* Reducir tamaño de fuente */
+        padding: 5px 8px; /* Ajustar padding */
+    }
+    
+    /* Opcional: Ocultar texto en botones muy pequeños y mostrar solo íconos */
+    
+    /* .action-button .heart-icon { */
+         /* margin-right: 0; */ /* Si se oculta el texto, no hay margen a la derecha */
+    /* } */
+}
+
+/* Para pantallas muy pequeñas (móviles antiguos o muy estrechos, hasta 480px) */
+@media (max-width: 480px) {
+    .header-logo img {
+        height: 60px; /* Reducir aún más el logo */
+    }
+
+    .action-button {
+        font-size: 0.7em; /* Reducir aún más la fuente */
+        padding: 4px 6px;
+    }
+    
+    /* Mostrar solo iconos si el espacio es muy limitado */
+    .action-button span:not(.heart-icon) {
+        display: none; /* Ocultar texto */
+    }
+    .action-button .heart-icon, .user-icon, .cart-icon {
+        margin-right: 0; /* Eliminar margen si no hay texto */
+        font-size: 1.5em; /* Hacer iconos un poco más grandes si son lo único */
+    }
+}
+
+
+.wishlist-button {
+    position: relative; /* CRÍTICO: Para que las imágenes absolutas se posicionen respecto a este botón */
+    width: 32px; /* Ajusta el tamaño del botón para que las imágenes quepan */
+    /* Ajusta el tamaño del botón */
+    padding: 0; /* Asegúrate de que el padding del botón no empuje las imágenes */
+}
+
+.wishlist-button img {
+    position: absolute; /* CRÍTICO: Superpone las dos imágenes */
+    top: 0;
+    left: 0;
+    width: 100%; /* La imagen ocupa todo el ancho del botón */
+    height: 100%; /* La imagen ocupa todo el alto del botón */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para el efecto de fade */
+}
+
+/* Por defecto, el corazón vacío es visible, el lleno está oculto */
+.wishlist-icon-default {
+    opacity: 1; 
+}
+
+.wishlist-icon-filled {
+    opacity: 0; 
+}
+
+/* Al pasar el ratón por encima del botón de wishlist */
+.wishlist-button:hover .wishlist-icon-default {
+    opacity: 0; /* Oculta el corazón vacío */
+}
+
+.wishlist-button:hover .wishlist-icon-filled {
+    opacity: 1; /* Muestra el corazón lleno */
+}
+/* En tu archivo Header.css */
+
+.header-logo-link {
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    color: inherit;        /* Asegura que el color de texto se herede (si aplica) */
+    display: flex;         /* Para asegurar que ocupe el espacio deseado si el Link es un elemento flex */
+    align-items: center;   /* Centra el logo si el Link tiene más altura */
+    justify-content: center; /* Centra el logo si el Link tiene más ancho */
+}
+
+.header-logo-link:hover {
+    opacity: 0.9; /* Pequeño efecto al pasar el ratón */
+}
+
+/* También puedes asegurarte de que el div.header-logo tenga el cursor correcto */
+.header-logo {
+    cursor: pointer; /* Indica que es clickeable */
+    /* ... tus estilos existentes para header-logo ... */
+}

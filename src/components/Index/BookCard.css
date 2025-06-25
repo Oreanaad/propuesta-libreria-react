@@ -1,0 +1,266 @@
+.book-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative;
+  min-height: 100px; /* Reducido para hacer las tarjetas más pequeñas */
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 8px; /* Ajuste de posición */
+  left: 8px; /* Ajuste de posición */
+  background-color: #e74c3c;
+  color: white;
+  padding: 4px 7px; /* Más pequeño */
+  border-radius: 50%;
+  font-size: 0.75em; /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  z-index: 2;
+  min-width: 28px; /* Tamaño más pequeño */
+  height: 28px; /* Tamaño más pequeño */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-badge {
+  position: absolute;
+  top: 8px; /* Ajuste de posición */
+  right: 8px; /* Ajuste de posición */
+  background-color: #27ae60;
+  color: white;
+  padding: 4px 7px; /* Más pequeño */
+  border-radius: 50%;
+  font-size: 0.75em; /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  z-index: 2;
+  min-width: 28px; /* Tamaño más pequeño */
+  height: 28px; /* Tamaño más pequeño */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-image-container {
+  width: 100%;
+  height: 220px; /* Reducida la altura de la imagen */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.book-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin-top: 10px;
+}
+
+.book-info {
+  padding: 10px 10px; /* Padding reducido */
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-title {
+  font-size: 1em; /* Más pequeño */
+  margin-bottom: 0; /* Margen reducido */
+  margin-top: 0;
+  color: var(--secundario);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  font-weight: bold;
+  -webkit-box-orient: vertical;
+}
+
+.book-description {
+  font-size: 0.8em; /* Más pequeño */
+  color: #666;
+  margin-bottom: 3px; /* Margen reducido */
+  min-height: 1.1em; /* Ajuste de altura mínima */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-author {
+  font-size: 0.75em; /* Más pequeño */
+  color: #888;
+  margin-bottom: 0; /* Margen reducido */
+  margin-top: 0;
+}
+
+.book-rating {
+  margin-top: 3px; /* Margen reducido */
+  margin-bottom: 8px; /* Margen reducido */
+  color: #f39c12;
+  font-size: 0.9em; /* Más pequeño */
+}
+
+.star {
+  margin-right: 1px; /* Margen reducido */
+}
+
+.price-container {
+  display: flex;
+  align-items: baseline;
+  margin-top: 0;
+  padding-top: 0px; /* Padding reducido */
+  margin-bottom: 0;
+}
+.book-price-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em; /* Más pequeño */
+  color: #333;
+  margin: 0;
+}
+
+.old-price {
+  font-size: 0.8em; /* Más pequeño */
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 6px; /* Margen reducido */
+}
+
+.current-price {
+  font-size: 1.1em; /* Más pequeño */
+  font-weight: bold;
+  color: #e67e22;
+}
+
+.book-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px; /* Padding reducido */
+
+  background-color: #fff;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px; /* Padding reducido */
+  border-radius: 15px; /* Menos redondeado */
+  font-size: 0.8em; /* Más pequeño */
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.button .icon {
+  margin-right: 4px; /* Menor margen para íconos */
+  font-size: 0.9em; /* Ícono un poco más pequeño */
+}
+
+.details-button {
+  background-color: var(--secundario);
+  color: white;
+  border-color: var(--secundario);
+  flex-grow: 1;
+  margin-right: 6px; /* Espacio reducido */
+}
+
+.details-button:hover {
+  background-color: var(--sombra);
+  transform: translateY(-1px);
+}
+
+.add-to-cart-button {
+  background-color:  var(--primario);
+  color: white;
+  border-color:  var(--primario);
+    flex-grow: 1;
+  margin-right: 6px; /* Espacio reducido */
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--secundario);
+  transform: translateY(-1px);
+}
+
+.favorite-button {
+  background-color: #f0f0f0;
+  color: #d33;
+  border-color: #ddd;
+  padding: 6px; /* Padding reducido */
+  flex-shrink: 0;
+}
+
+.favorite-button .icon {
+  margin-right: 0;
+}
+
+.favorite-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-1px);
+}
+
+/* ... (mantén todos tus estilos anteriores para .book-card, .book-image-container, etc.) ... */
+
+/* ESTILOS PARA LAS ESTRELLAS */
+.book-rating {
+  margin-top: 2px; /* Margen reducido */
+  margin-bottom: 6px; /* Margen reducido */
+  color: #f39c12; /* Color dorado para las estrellas */
+  font-size: 0.8em; /* Tamaño de fuente más pequeño */
+  white-space: nowrap; /* Evita que las estrellas se rompan en varias líneas */
+}
+
+.star {
+  display: inline-block; /* Asegura que cada estrella se muestre en línea */
+  margin-right: 0.5px; /* Margen muy pequeño entre estrellas */
+  font-size: 1.2em; /* Ajusta el tamaño visual de los caracteres de estrella */
+}
+
+/* Estilos para estrellas completas */
+.star.full-star {
+  color: #f39c12; /* Color dorado */
+}
+
+/* Estilos para media estrella */
+.star.half-star {
+  position: relative;
+  overflow: hidden;
+  width: 0.6em; /* Ancho para mostrar solo la mitad */
+  color: #f39c12; /* Color dorado para la parte visible */
+  direction: rtl; /* Para alinear el caracter de estrella a la derecha y ocultar la mitad izquierda */
+}
+/* Este hack de direction:rtl puede ser complicado. Una alternativa más limpia es usar SVG o un icono de media estrella real. */
+/* Si no te funciona el half-star de arriba, puedes usar este fallback: */
+/* .star.half-star:before {
+    content: "½"; // Usar el caracter de media estrella
+    color: #f39c12;
+} */
+
+
+/* Estilos para estrellas vacías */
+.star.empty-star {
+  color: #ccc; /* Gris claro para estrellas vacías */
+}
+
+/* ... (mantén el resto de tus estilos para .price-container, .book-actions, etc.) ... */

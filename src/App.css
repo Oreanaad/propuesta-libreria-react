@@ -1,0 +1,21 @@
+/* En src/App.css */
+:root{
+ --primario:  #f6c0d0;
+ --secundario: #d0a5c0;
+ --sombra: #8e7c93;
+ --claro: #fff
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffff; /* <-- Cambia esto a un gris claro o #ffffff para blanco */
+  color: #333;
+}
+
+.App {
+  padding: 0;
+  background-color: #ffff; /* Asegúrate de que no tenga un fondo oscuro aquí tampoco */
+}
+.p{
+  margin: 0;
+}
